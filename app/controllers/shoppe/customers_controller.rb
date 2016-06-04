@@ -20,6 +20,8 @@ module Shoppe
     def create
       @customer = Shoppe::Customer.new(safe_params)
       if @customer.save
+        User.create!(email: safe_params[:email],
+                     password: safe_params[:mobile])
         redirect_to @customer, flash: { notice: t('shoppe.customers.created_successfully') }
       else
         render action: 'new'
@@ -28,6 +30,8 @@ module Shoppe
 
     def update
       if @customer.update(safe_params)
+        User.update!(email: safe_params[:email],
+                     password: safe_params[:mobile])
         redirect_to @customer, flash: { notice: t('shoppe.customers.updated_successfully') }
       else
         render action: 'edit'
@@ -36,6 +40,7 @@ module Shoppe
 
     def destroy
       @customer.destroy
+      User.find(params[:id]).destroy
       redirect_to customers_path, flash: { notice: t('shoppe.customers.deleted_successfully') }
     end
 
