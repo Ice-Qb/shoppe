@@ -4,7 +4,11 @@ Re: Order #<%=@order.number%>
 
 We're pleased to let you know that we have accepted your order and your payment of <%=number_to_currency @order.total%> has been taken from your card successfully.
 
-We will e-mail you again when we ship your order from our warehouse.
+Your ordered items are:
+
+<% for item in @order.order_items %>
+ * <%= item.quantity %> x <%= item.ordered_item.full_name %> <% if item.ordered_item.download_link.present? %> , <%= link_to 'Download', item.ordered_item.download_link %> <% end %>
+<% end %>
 
 Many thanks,
 

@@ -21,7 +21,7 @@ module Shoppe
       @customer = Shoppe::Customer.new(safe_params)
       if @customer.save
         Member.create!(email: safe_params[:email],
-                     password: safe_params[:mobile])
+                       password: safe_params[:mobile])
         redirect_to @customer, flash: { notice: t('shoppe.customers.created_successfully') }
       else
         render action: 'new'

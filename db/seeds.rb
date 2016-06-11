@@ -37,7 +37,18 @@ lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
          culpa qui officia deserunt mollit anim id est laborum.'
 
-pro = Shoppe::Product.new(name: 'Yealink T20P', sku: 'YL-SIP-T20P', description: lorem, short_description: 'If cheap & cheerful is what you’re after, the Yealink T20P is what you’re looking for.', weight: 1.119, price: 54.99, cost_price: 44.99, tax_rate: tax_rate, featured: true)
+pro = Shoppe::Product.new(
+  name: 'Yealink T20P',
+  sku: 'YL-SIP-T20P',
+  description: lorem,
+  short_description: 'If cheap & cheerful is what you’re after, the Yealink '\
+    'T20P is what you’re looking for.',
+  weight: 1.119,
+  price: 54.99,
+  cost_price: 44.99,
+  tax_rate: tax_rate,
+  featured: true,
+  download_link: 'http://www.yealink.com/Upload/ip/T22/1YealinkT22-17251548017.jpg')
 pro.product_category_ids = cat1.id
 pro.default_image_file = get_file('t20p.jpg')
 if pro.save
