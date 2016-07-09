@@ -355,6 +355,7 @@ en:
       country: Country
       create_order: Create order
       create_notice: Order has been created successfully
+      time: Time
       customer: Customer
       delivery_address: Delivery address
       delivery_name: Delivery name

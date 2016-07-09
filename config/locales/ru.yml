@@ -345,6 +345,7 @@ ru:
       create_order: Создать заказ
       create_notice: Заявка успешно добавлена
       customer: Клиент
+      time: Время
       delivery_address: Адрес доставки
       delivery_name: Имя получателя
       edit_order: Редактировать заказ
