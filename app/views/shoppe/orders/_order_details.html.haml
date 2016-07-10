@@ -3,29 +3,8 @@
     %dl
       %dt= t('shoppe.orders.name')
       %dd= @order.full_name
-      %dt= t('shoppe.orders.company')
-      %dd= @order.company.blank? ? '-' : @order.company
-      %dt
-        - if @order.separate_delivery_address?
-          = t('shoppe.orders.billing_address')
-        - else
-          = t('shoppe.orders.billing_delivery_address')
-
-      %dd= @order.billing_address1
-      %dd= @order.billing_address2
-      %dd= @order.billing_address3
-      %dd= @order.billing_address4
-      %dd= @order.billing_postcode
-      %dd= @order.billing_country.try(:name)
-      - if @order.separate_delivery_address?
-        %dt= t('shoppe.orders.delivery_address')
-        %dd= @order.delivery_name
-        %dd= @order.delivery_address1
-        %dd= @order.delivery_address2
-        %dd= @order.delivery_address3
-        %dd= @order.delivery_address4
-        %dd= @order.delivery_postcode
-        %dd= @order.delivery_country.try(:name)
+      %dt= t('shoppe.orders.time')
+      %dd= @order.time
   .right
     %dl
       %dt= t('shoppe.orders.email_address')
@@ -55,3 +34,5 @@
         %dd
           = link_to t('shoppe.orders.accept'), [:accept, @order], :method => :post, :class => 'button green'
           = link_to t('shoppe.orders.reject'), [:reject, @order], :method => :post, :class => 'button purple'
+  %h6= t('shoppe.orders.commentary')
+  %p= @order.commentary
