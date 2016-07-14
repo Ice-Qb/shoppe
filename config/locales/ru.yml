@@ -347,6 +347,7 @@ ru:
       customer: Клиент
       time: Время
       commentary: Комментарий
+      code: Код
       delivery_address: Адрес доставки
       delivery_name: Имя получателя
       edit_order: Редактировать заказ

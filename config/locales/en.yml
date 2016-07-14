@@ -357,6 +357,7 @@ en:
       create_notice: Order has been created successfully
       time: Time
       commentary: Commentary
+      code: Code
       customer: Customer
       delivery_address: Delivery address
       delivery_name: Delivery name

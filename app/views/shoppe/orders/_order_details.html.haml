@@ -4,7 +4,10 @@
       %dt= t('shoppe.orders.name')
       %dd= @order.full_name
       %dt= t('shoppe.orders.time')
-      %dd= @order.time
+      - if @order.billing_address4[/\d+/]
+        %dd= @order.billing_address4
+      - else
+        %dd N/A
   .right
     %dl
       %dt= t('shoppe.orders.email_address')
@@ -34,5 +37,5 @@
         %dd
           = link_to t('shoppe.orders.accept'), [:accept, @order], :method => :post, :class => 'button green'
           = link_to t('shoppe.orders.reject'), [:reject, @order], :method => :post, :class => 'button purple'
-  %h6= t('shoppe.orders.commentary')
-  %p= @order.commentary
+  %h3= t('shoppe.orders.commentary')
+  %p= @order.company
